@@ -1,0 +1,366 @@
+%%%%%%%%%%%%%%%%
+%% Background %%
+%%
+
+\section{Introduction}
+
+The default mode network (DMN) consists of an aggregation of brain regions that are active during rest, as measured by BOLD signal, and are associated with spontaneous thought and emotion regulation \cite{Raichle2001,Andrews-Hanna2014,Buckner2008}. The network is also commonly deactivated during cognitively demanding tasks \cite{Raichle2007}. Alterations to the DMN have been associated with a broad array of neuropsychiatric conditions \cite{Calhoun2008,Whitfield-Gabrieli2012}. However, as the DMN is most commonly assessed during rest \cite{Greicius2002} or as a result of deactivation during a task \cite{Harrison2008}, most studies fail to differentiate ability to modulate the DMN from the tendency to do so. Individuals likely vary both in their capacity to activate and/or deactivate the DMN and in spontaneous implementation of function related to the DMN. Just as the use of specific emotion regulation strategies (e.g., cognitive reappraisal) relate to psychopathology specifically in the tendency to use them vs. instructed use \cite{Ehring2010}, the ability to modulate the DMN and tendency to do so may represent distinct and important domains of neural and psychological function \cite{Anticevic2012}. Consistent with the National Institute of Mental Health’s Research Domain Criteria project \cite{Insel2010}, the ability and tendency to regulate the DMN may have both general and specific illness implications. For example, it could be that deficits in the ability to suppress DMN-related activity such as mind-wandering may be related to cognitive deficits across differing forms of mental illness \cite{Sheline2009}, while an increased likelihood to engage in specific forms of mind-wandering (e.g., worry, rumination) may be more specific to anxiety and depression \cite{Hamilton2011,Sheline2009,Sylvester2012}.
+
+While psychological functions related to the DMN can be targeted, the DMN itself is somewhat more difficult to target, as the functions it instantiates are presumably multiply determined (i.e., invoking specific aspects of the DMN and/or other networks) and varied (i.e., different in nature and possibly kind) \cite{Friston2002}. Recent advances in real-time fMRI (rt-fMRI) \cite{Craddock2012,LaConte2011,Soldati2013} have made it possible to provide participant-specific feedback about neural networks. These advances permit the addition of instructions to modulate given neural networks as well as the assessment of an individual’s ability to follow the instructions or modulate the specific network. In addition to collecting task-based and resting-state data, using rt-fMRI as neurofeedback may be critical to acquiring knowledge about tendencies and capability to regulate the DMN.
+
+The present ongoing project is part of the Enhanced Nathan Kline Institute-Rockland Sample (NKI-RS) \cite{Nooner2012} which aims to capture deep and broad phenotyping of a large community-ascertained sample. In addition to the NKI-RS protocol, this project includes data collection from tasks that activate (Moral Dilemma task \cite{Harrison2008}) and deactivate the DMN (Multi-Source Interference Task \cite{Bush2006}), a resting state scan, a novel real-time fMRI neurofeedback-based paradigm that specifically probes DMN modulation \cite{Craddock2012}, and additional self-report measures.
+
+Herein, we provide an overview of planned data collection, methods used, summaries of data collected and available to date, and validation analyses. New data will be released on a regular basis and will be available at the Collaborative Informatics and Neuroimaging Suite (COINS) Data Exchange (\url{http://coins.mrn.org/dx}) \cite{Scott2011,Wood2014}, as well as the Neuroimaging Informatics Tools and Resources Clearinghouse (NITRC; \url{http://www.nitrc.org/}) and in the Amazon Web Services (\url{https://aws.amazon.com/s3/}).
+
+\section{Organization and access to the repository}
+
+Datasets for the present project can be accessed through the COINS Data Exchange (\url{http://coins.mrn.org/dx}) \cite{Scott2011,Wood2014}, NITRC (\url{http://fcon\_1000.projects.nitrc.org/indi/enhanced/download.html}) or through the Amazon Web Services S3 bucket (\url{https://aws.amazon.com/s3/}). Documentation on downloading the datasets can be found at \url{http://fcon\_1000.projects.nitrc.org/indi/enhanced/sharing.html}. Data are available through both COINS and NITRC in the form of .tar files, containing all imaging and phenotypic data. The COINS data exchange (only accessible with DUA) offers a query builder tool, permitting the user to target and download files by specific search criteria (e.g., full completion of certain phenotypic measures and/or imaging sequences). Data are available through AWS as individual compressed NIfTI files that are arranged in the brain imaging data structure (BIDS) file structure \cite{Gorgolewski2016}.
+
+All of the presented data are shared in accordance with the procedures of the NKI-RS study (\url{http://fcon\_1000.projects.nitrc.org/indi/enhanced/sharing.html}). While a goal of the project is to maximize access to these data, privacy for the participants and their personal health information is paramount. De-identified neuroimaging data along with limited demographic information can be downloaded from the repository without restriction. To protect participant privacy, access to the high dimensional phenotypic and assessment data requires a data usage agreement (DUA). The DUA is relatively simple and requires a signature by an appropriate institutional representative. The DUA is available via Neuroimaging Informatics Tools and Resources Clearinghouse (Data Citation A1: \url{http://fcon\_1000.projects.nitrc.org/indi/enhanced/data/DUA.pdf}).
+
+\subsection{Phenotypic data}
+All phenotypic data are available as comma separated value (.csv) files from COINS. Summary scores calculated from the RVIP task info area available through COINs, trial-by-trial response information is available via NITRC (Data Citation Y1: \url{http://fcon\_1000.projects.nitrc.org/indi/enhanced/RVIP-master.zip}).
+
+\subsection{Imaging data}
+Image headers have been wiped of protected health information and faces have been removed from the structural images. Data are available in NIfTI format arranged in the BIDS format \cite{Gorgolewski2016}. Acquisition parameters are provided in JSON files that are named the same as their corresponding imaging data. Task traces and responses, and physiological recordings, are also provided in JSON files along with the data. Additional details for all MRI data, as well as corresponding task information are available via NITRC (Data Citation X1: \url{http://fcon\_1000.projects.nitrc.org/indi/enhanced/mri\_protocol.html\# scans-acquired}).
+
+\subsection{Quality assessment data}
+Quality metrics are available for download from the QAP repository (\url{http://preprocessed-connectomes-project.org/quality-assessment-protocol}). They are available as two (anatomical and functional) comma separated value files.
+
+\section{Contents of the Repository}
+The Neurofeedback (NFB) repository contains neuroimaging and assessment data that characterizes DMN function in a community ascertained sample of adults (21-45 years old) with a variety of psychiatric diagnoses. The data is collected in a single-visit that occurs after the participants complete the Enhanced Nathan Kline Institute-Rockland Sample (NKI-RS) protocol \cite{Nooner2012}. The NKI-RS entails a 1 to 2 -visit deep phenotyping protocol \cite{Nooner2012} and a Connectomes oriented neuroimaging assessment (data collection visit schedules are available online at: \url{http://fcon\_1000.projects.nitrc.org/indi/enhanced/sched.html}). NKI-RS phenotyping includes a variety of cognitive and behavioral assessments, a blood draw , a basic fitness assessment, nighttime actigraphy, medical history questionnaire, and the administration of the Structured Clinical Interview for DSM-IV-TR Non-patient edition \cite{First2002}. The NKI-RS imaging protocol includes structural MRI, diffusion MRI, several resting state fMRI, and perfusion fMRI scans. Although the NKI-RS data is being openly shared (\url{http://fcon\_1000.projects.nitrc.org/indi/enhanced/}) it is not a part of the NFB repository and is not described in further detail herein.
+
+\subsection{Participants}
+The NFB repository will ultimately contain data from a total of 180 residents of Rockland, Westchester, or Orange Counties, New York, or Bergen County, New Jersey aged 21 to 45, (50\% male at each age year). Based on census data from 2013, Rockland County, New York has the following demographics \cite{Census2016}: Median age 36.0 years, population is 50.5\% female, 80.4\% White, 11.4\% Black/African American, 6.3\% Asian, 0.5\% Native American/Pacific Islander, and 1.4\% “Other”. With regards to ethnicity, 13.8\% of the population endorses being Hispanic/Latino.
+
+Minimally restrictive psychiatric exclusion criteria, which only screen out severe illness, were employed to include individuals with a range of clinical and sub-clinical psychiatric symptoms. Medical exclusions include: chronic medical illness, history of neoplasia requiring intrathecal chemotherapy or focal cranial irradiation, premature birth (prior to 32 weeks estimated gestational age or birth weight $<$ 1500g, when available), history of neonatal intensive care unit treatment exceeding 48 hours, history of leukomalacia or static encephalopathy, or other serious neurological (specific or focal) or metabolic disorders including epilepsy (except for resolved febrile seizures), history of traumatic brain injury, stroke, aneurysm, HIV, carotid artery stenosis, encephalitis, dementia or mild cognitive impairment, Huntington’s Disease, Parkinson’s, hospitalization within the past month, contraindication for MRI scanning (metal implants, pacemakers, claustrophobia, metal foreign bodies or pregnancy) or inability to ambulate independently. Severe psychiatric illness can compromise the ability of an individual to comply with instructions, tolerate the MRI environment and participate in the extensive phenotyping protocol. Accordingly, participants with severe psychiatric illness were excluded, as determined by Global Assessment of Function (GAF; DSM-IV TR \cite{First2002}) $<$ 50, history of chronic or acute substance dependence disorder, history of diagnosis with schizophrenia, history of psychiatric hospitalization, or suicide attempts requiring medical intervention.
+
+The technical validation reported in this paper includes 125 participants with the following demographics: median age 30, mean age, 31, std. dev. 6.6, 77 females, 59.2\% White, 28.8\% Black/African American, 0.56\% Asian, 0\% Native American/Pacific Islander, and 0.56\% “Other”, and 16.8\% Hispanic/Latino. A summary of participant diagnoses and current medications are listed in tables 1 and 2.
+
+\begin{table}[!ht]
+\caption{Medications used by participants on a daily basis. Medications were grouped by class and the number of participants who reported taking them is provided (Pts.). Full medication information regarding drug name, dosage, primary indication, and duration of time taken at a participant level can be accessed through COINs after completing a DUA.}
+\centering
+\begin{tabular}{lr}
+\textbf{Medication Class} & \textbf{Pts.} \\
+\hline    
+Vitamins/Supplements & 34 \\
+Obstetrics/Gynecology & 12 \\
+Psychiatric & 8 \\
+Gastrointestinal & 6 \\
+Endocrine & 5 \\
+Analgesics  & 4 \\
+Cardiovascular & 3 \\
+Rheumatologic & 2 \\
+Asthma/Pulmonary & 2 \\
+Allergy/Cold/ENT & 1 \\
+Immunology & 1 \\
+Dermatologic & 1 \\
+Antihistamine & 1 \\
+\end{tabular}
+\label{table:med} 
+\end{table}
+
+
+\begin{table}[h!]
+    \caption{Summary diagnostic information for the included 125 participants as determined by the SCID-IV or consensus diagnosis by the study psychiatrist. Diagnoses are accompanied with the SCID diagnostic code and the number of participants diagnosed (Pts.). Full diagnostic information at a participant level can be accessed through COINs after completing a DUA.}
+    \centering
+    \begin{tabular}{ lr }
+        \textbf{Diagnosis (SCID-IV code)} & \textbf{Pts.} \\ \hline
+        No Diagnosis or Condition on Axis I (V71.09) & 59 \\
+        Alcohol Abuse Past (305.00) & 21 \\
+        Major Depressive Disorder, Single Episode, In Full Remission (296.26) & 12 \\
+        Cannabis Abuse Current (305.20) & 12 \\
+        Cannabis Dependence Past (304.30) & 11 \\
+        Major Depressive Disorder, Recurrent, In Full Remission Past (296.36) &  8 \\
+        Major Depressive Disorder, Single Episode, Unspecified Past (296.20)  &  5 \\
+        Posttraumatic Stress Disorder Current (309.81) & 5 \\
+        Alcohol Dependence Past (303.90)  &  5 \\
+        Specific Phobia Past (300.29)  & 5 \\
+        Generalized Anxiety Disorder Current (300.02) &  4 \\
+        Attention-Deficit/Hyperactivity Disorder, Inattentive Type Current (314.00) & 4 \\
+        Attention-Deficit/Hyperactivity Disorder NOS Current (314.9)   & 3 \\
+        Attention-Deficit/Hyperactivity Disorder, Hyperactive-Impulsive Type Current (314.01) &  3\\
+        Cocaine Abuse Past (305.60) & 2 \\
+        Anorexia Nervosa Past (307.1) &  2 \\
+        Anxiety Disorder NOS Current (300.00) &   2 \\
+        Panic Disorder Without Agoraphobia Past (300.01) &    2 \\
+        Social Phobia Current (300.23) & 2 \\
+        Agoraphobia Without History of Panic Disorder Current (300.22) &  2 \\
+        Panic Disorder With Agoraphobia Past (300.21)  & 2 \\
+        Hallucinogen Abuse Past (305.30)  &  2 \\
+        Cocaine Dependence Past (304.20)  &  2 \\
+        Trichotillomania (312.39)  & 1 \\
+        Bulimia Nervosa Current (307.51)  &  1 \\
+        Major Depressive Disorder, Recurrent, In Partial Remission Past (296.35)  &  1 \\
+        Major Depressive Disorder, Recurrent, Moderate Current (296.32)  & 1 \\
+        Bereavement (V62.82)    & 1 \\
+        Hallucinogen Dependence Past (304.50)  & 1 \\
+        Obsessive-Compulsive Disorder Current (300.3) &  1 \\
+        Body Dysmorphic Disorder Current (300.7)  &  1 \\
+        Eating Disorder NOS Past (307.50) &  1 \\
+        Phencyclidine Abuse Past (305.90) &  1 \\
+        Delusional Disorder Mixed Type (297.1) &  1 \\
+        Amphetamine Dependence Past (304.40)  &  1 \\
+        Opioid Abuse Past (305.50) & 1 \\
+        Sedative, Hypnotic, or Anxiolytic Dependence Past (304.10) &  1 \\
+%         \hline
+      \end{tabular}
+\label{table:psych}
+\end{table}
+
+\subsection{Phenotypic Data}
+
+In addition to the NKI-RS protocol, participants completed a variety of assessments that probe cognitive, emotional, and behavioral domains that have been previously implicated with DMN function \cite{Andrews-Hanna2014,Hamilton2011,Sheline2009,Buckner2008}. These included the Affect Intensity Measure (AIM) \cite{Larsen1986}, Emotion Regulation Questionnaire (ERQ; \cite{Gross2003}), Penn State Worry Questionnaire (PSWQ; \cite{Meyer1990}), Perseverative Thinking Questionnaire (PTQ; \cite{Ehring2011}), Positive and Negative Affect Schedule – short version (PANAS-S; \cite{Watson1988}), Ruminative Responses Scale (RRS; \cite{Treynor2003}), and the Short Imaginal Process Inventory (SIPI; \cite{Huba1981}). Assessments were completed using web-based forms implemented in COINs \cite{Scott2011}. Sample mean, standard deviation, and range of the above measures for the first 125 participants are provided in Table 3.
+
+Participants also completed a Rapid Visual Information Processing (RVIP) task to assess sustained attention and working memory. Response times and detection accuracy from this task have been previously correlated with DMN function \cite{Pagnoni2012}. The RVIP is administered using custom software, implemented in PsychoPy \cite{Peirce2008}, which conforms to the literature describing its original implementation in the Cambridge Neuropsychological Test Automated Battery (CANTAB \cite{Sahakian1992}). A pseudo-random stream of digits (0-9) is presented to the participants in white, centered on a black background, surrounded by a white box. Participants are instructed to press the space bar whenever they observe the sequences 2-4-6, 3-5-7, or 4-6-8. Digits are presented one after another at a rate of 100 digits per minute and the number of stimuli that occurred between targets varied between 8 and 30. Responses that occurred within 1.5 seconds of the last digit of a target sequence being presented were considered “hits”. Stimuli presentation continued until a total of 32 target sequences were encountered, which required on average 4 minutes and 20 seconds. Before performing the task, participants completed a practice version that indicated when a target sequence had occurred and provided feedback (“hit” or “false alarm”) whenever the participant pressed the space bar. Participants were allowed to repeat the practice until they felt that they were comfortable with the instructions. Summary statistics calculated from the RVIP included: mean reaction time, total targets, hits, misses, false alarms, hit rate ($H$), false alarm rate ($F$), and $A'$ (Eqn. \ref{aprime}), $A'$ is an alternative to the more common $d'$ in signal detection theory \cite{Stanislaw1999}). The task can be downloaded from the OpenCogLab Repository (\url{http://opencoglabrepository.github.io/experiment\_rvip.html}).
+
+\begin{equation}
+\label{aprime}
+A'=\left\{
+    \begin{matrix}
+       .5 + \frac{(H-F)(1+H-F)}{4H(1-F)}  & \textup{when}  \, H\geq F  \\
+       .5 + \frac{(F-H)(1+F-H)}{4F(1-H)}  & \textup{when}  \, H<  F  
+    \end{matrix}
+    \right.
+\end{equation}
+% A^'= {█(.5+ (H-F)(1+H-F)/4H(1-F)   " " @.5-(F-H)(1+F-H)/4F(1-H)    " " )┤  (when H≥F)¦(when H<F)    (1)
+
+\subsection{MRI Acquisition}
+
+Data was acquired on a 3 T Siemens Magnetom TIM Trio scanner (Siemens Medical Solutions USA: Malvern PA, USA) using a 12-channel head coil. Anatomic images were acquired at $1 \times 1 \times 1$ mm$^3$ resolution with a 3D T1-weighted magnetization-prepared rapid acquisition gradient-echo (MPRAGE) sequence \cite{Mugler1990} in 192 sagittal partitions each with a $256 \times 256$ field of view (FOV), 2600 ms repetition time (TR), 3.02 ms echo time (TE), 900 ms inversion time (TI), 8$^\circ$ flip angle (FA), and generalized auto-calibrating partially parallel acquisition (GRAPPA) \cite{Griswold2002} acceleration factor of 2 with 32 reference lines. The sMRI data were acquired immediately after a fast localizer scan and preceded the collection of the functional data.
+
+
+
+\begin{table}[h!]
+    \caption{Statistics for self-report measures from the neurofeedback specific visit related to perseverative thinking, emotion regulation, and imaginative processes. Mean, Standard Deviation, and Range are reported for the total AIM, ERQ, PSWQ, PTQ, PANAS, RRS, and SIPI scores, as well as each measure's sub-scales.}
+    \centering
+    \begin{tabular}{ llrrc }
+        \multicolumn{2}{l}{\textbf{Scale}} & \textbf{Mean} & \textbf{Std. Dev.} & \textbf{Range} \\ \hline
+        \multicolumn{2}{l}{\emph{Affect Intensity Measure}} & & & \\
+        & Total & 138.38 & 16.76	& 88-178 \\
+        & Positive Affect & 62.33 & 12.87	 & 30-100 \\
+        & Positive Intensity & 26.48 & 4.99 & 14-40 \\
+        & Negative Affect	& 26.77 & 5.35 & 14-38 \\
+        & Negative Intensity & 29.91 & 4.84 & 20-48 \\
+        \multicolumn{2}{l}{\emph{Emotion Regulation Questionnaire}} & & & \\
+        & Total & 44.15 & 8.14 & 12-60 \\
+        & Reappraisal & 31.03 & 6.88 & 6-42 \\
+        & Suppression & 13.11 & 4.59 & 4-23 \\
+        \multicolumn{2}{l}{\emph{Penn State Worry Questionnaire}} & & & \\
+        & Total & 28.03 & 10.71 & 11-52 \\
+        \multicolumn{2}{l}{\emph{Perseverative Thinking Questionnaire}} &&& \\
+        & Total & 20.01 & 12.79 & 0-57 \\
+        \multicolumn{2}{l}{\emph{Positive and Negative Affect Scale – State}} & & & \\
+        & Total & 44.21 & 9.32 & 25-82 \\
+        & Positive Affect & 30.98 & 8.33 & 13-50 \\
+        & Negative Affect & 13.24 & 5.16 & 10-38 \\
+        \multicolumn{2}{l}{\emph{Ruminative Responses Scale}} & & & \\
+        & Total & 40.32 & 13.76 & 22-81 \\
+        & Depression-Related & 21.52 & 7.89 & 11-45 \\
+        & Brooding & 9.54 & 3.36 & 5-20 \\
+        & Reflection & 9.24 & 3.92 & 5-20 \\
+        \multicolumn{2}{l}{\emph{Short Imaginal Processes Inventory}} &&& \\
+        & Total & 126.6 & 20.42 & 56-180 \\
+        & Positive Constructive Daydreaming & 49.81 & 8.59 & 27-72 \\
+        & Guilty Fear of Failure Daydreaming & 33.27 & 9.04 & 17-59 \\
+        & Poor Attentional Control & 43.83 & 9.39 & 16-70 \\
+      \end{tabular}
+\label{table:assessments}
+\end{table}
+
+A gradient echo field map sequence was acquired with the following parameters: TR 500 ms, TE1/TE2 2.72 ms/5.18 ms, FA 55$^\circ$, 64 x 64 matrix, with a 220 mm FOV, 30 3.6 mm thick interleaved, oblique slices, and in plane resolution of $3.4 \times 3.4$ mm$^2$. All functional data were collected with a blood oxygenation level dependent (BOLD) contrast weighted gradient-recalled echo-planar-imaging sequence (EPI) that was modified to export images, as they were acquired, to AFNI over a network interface \cite{Cox1995,LaConte2007}. FMRI acquisition consisted of 30 3.6mm thick interleaved, oblique slices with a \%10 slice gap, TR 2000 ms, TE 30 ms, FA 90$^\circ$, $64 \times 64$ matrix, with 220 mm FOV, and in plane resolution of $3.4 \times 3.4$ mm$^2$. Functional MRI scanning included a three volume “mask” scan and a six-minute resting state scan followed by three task scans (described later) whose order was counterbalanced across subjects.
+
+During all scanning, galvanic skin response (GSR), pulse and respiration waveforms were measured using MRI compatible non-invasive physiological monitoring equipment (Biopac Systems, Inc.). Rate and depth of breathing were measured with a pneumatic abdominal circumference belt. Pulse was monitored with a standard infrared pulse oximeter placed on the tip of the index finger of the non-dominant hand. Skin conductance was measured with disposable passive electrodes that were non-magnetic and non-metallic, and collected on the hand. The physiological recordings were synchronized with the imaging data using a timing signal output from the scanner. Visual stimuli were presented to the participants on a projection screen that they could see through a mirror affixed to the head coil. Audio stimuli were presented through headphones using an Avotec Silent-Scan® pneumatic system (Avotec, Inc.: Stuart FL, USA).
+
+\subsection{MRI acquisition order and online Processing}
+
+Several stages of online processing are necessary to enable the denoising of fMRI data and decoding DMN activity levels in real-time \cite{Craddock2012}. These stages include calculating transforms required to convert the DMN template from MNI space to subject space, creating white matter (WM) and cerebrospinal fluid (CSF) masks for extracting nuisance signals, and training a support vector regression (SVR) model for extracting DMN activity. The MRI session was optimized to collect the data required for these various processing steps, and to perform the processing, while minimizing delays in the experiment.
+After acquiring a localizer, the scanning protocol began with the acquisition of a T1 weighted anatomical image used for calculating transforms to MNI space and white matter and CSF masks. Once the image was acquired it was transferred to a DICOM server on the real-time analysis computer (RTAC), which triggered initialization of online processing. The processing script started AFNI in real-time mode, configured it for fMRI acquisition, and began structural image processing. Structural processing included reorienting the structural image to RPI voxel order, skull-stripping using AFNI’s 3dSkullStrip \cite{Cox1996}, resampling the image to isotropic 2-mm voxels (to reduce computational cost of subsequent operations), segmentation into grey matter (GM), white matter (WM), and cerebrospinal fluid (CSF) using FSL’s FAST \cite{Zhang2001}, and normalization into MNI space using FSL’s FLIRT \cite{Jenkinson2002,Jenkinson2001}. WM and CSF probability maps were binarized using a 90\% threshold. The CSF mask was constrained to the lateral ventricles using an ROI from the AAL atlas to avoid overlap with GM.
+
+In parallel with the structural processing a FieldMap was collected but not used in the online processing. Subsequently, a three volume “mask” EPI scan was acquired and transferred to the RTAC. The three images were averaged, reoriented to RPI, and used to create a mask to differentiate brain signal from background (using AFNI’s 3dAutomask \cite{Cox1996}). The mean image was coregistered to the anatomical image using FSL’s boundary based registration (BBR) \cite{Greve2009}. The resulting linear transform was inverted and applied to the WM and CSF masks to bring them into alignment with the fMRI data. Additionally, the transform was combined with the inverted anatomical-to-MNI transform and applied to the canonical map of the DMN (from \cite{Smith2009}).
+
+Next, a 6-minute resting state scan (182 volumes) was collected and used as training data to create the support vector regression (SVR) model. This procedure involved motion correction followed by a nuisance regression procedure to orthogonalize the data to six head motion parameters, mean WM, mean CSF, and global signal \cite{Friston1996,Fox2005,Lund2006}. A SVR model of the DMN was trained using a modified dual regression procedure in which a spatial regression to the canonical map of the DMN was performed to extract a time course of DMN activity. The Z-transformed DMN time course was then used as labels (independent variable), with the preprocessed resting state data as features (dependent variables), for SVR training (C=1.0, $\epsilon = 0.01$) using AFNI’s 3dsvm tool \cite{LaConte2005}. The result was a DMN map tailored to the individual participant based on preexisting expectations about DMN anatomy and function. After SVR training was completed, the MSIT (198 volumes), Moral Dilemma (144 volumes), and Neurofeedback test (412 volumes) scans were run. The order of the task based functional scans was counterbalanced and stratified for age and sex across participants.
+
+\subsection{Functional MRI Tasks}
+
+\subsubsection{Resting state scan}
+
+Participants were instructed to keep their eyes open during the scan and fixate on a white plus (+) sign centered on a black background. They were asked to let their mind wander freely and if they noticed themselves focusing on any particular train of thought, to let their mind wander away from it.
+
+\subsubsection{Moral Dilemma Task}
+
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=\textwidth]{md_vignettes.png}
+   \caption{Examples of vignettes from the moral dilemma task. A) A control vignette: "Mr. Jones is practicing his three-point throw on the basketball court behind his house. He hasn’t managed to score a basket during the whole morning, despite all the practice. He concentrates hard and throws the ball one more time. This time his aim is more accurate, the ball curves through the air and falls cleanly into the basket. Mr. Jones has managed to score a basket for the first time." Question during task: Will he score? B) A dilemma vignette. "Mr. Jones and his only son are held in a concentration camp. His son tries to escape but he is caught. The guard watching them tells Mr. Jones that his son is going to be hanged and that it will be him (Mr. Jones) who has to push the chair. If he does not do it, not only will his son die but also five more people held in the concentration camp." Question during task: Would you push the chair? Vignettes are copied from \cite{Harrison2008} Support Information Appendix.}
+   \label{fig:morald}
+\end{figure}
+
+The Moral Dilemma (MD) task involved a participant making a decision about what he or she would do in a variety of morally ambiguous scenarios presented as a series of vignettes (see Fig.~\ref{fig:morald}A for an example) \cite{Harrison2008}. As a control, the participant was asked to recall a detail from a dilemma-free vignette (see Fig.~\ref{fig:morald}B for an example). Prior work using these vignettes has shown strong activation of DMN regions during moral dilemma scenarios relative to control scenarios \cite{Harrison2008}. The MD task provided a basis to directly examine task-induced activation of the DMN.
+
+Just prior to the scan, participants listened to a recording of the vignette while viewing a corresponding image (see Fig.~\ref{fig:morald}A and \ref{fig:morald}B for examples) and were asked to decide how they would react in the scenario. The fMRI tasks consisted of 24 moral dilemma questions and 24 control questions presented in eight 30-second blocks, each consisting of six questions, that alternated between moral dilemma and control conditions. Participants viewed an image and heard a question corresponding to each vignette. Each image was displayed for 5 seconds and the audio began one second after image onset. Participants responded to the proposed question by pressing one of two buttons on a response box (index finger button for “yes”, middle finger button for “no”). The task began and ended with 20 second fixation blocks during which participants passively viewed a plus (+) sign centered on a grey background. The task was implemented in PsychoPy \cite{Peirce2008} using images provided by the authors of the original work \cite{Harrison2008} and can be downloaded from the OpenCogLab Repository (\url{http://opencoglabrepository.github.io/experiment\_moraldillema.html}).
+
+\subsubsection{Multi-Source Interference Task}
+The MSIT was developed as an all-purpose task to provide robust single-participant level activation of cognitive control and attentional regions in the brain \cite{Bush2006}. Early work with the MSIT suggests robust activation of regions associated with top-down control – regions that are often active when the DMN is inactive \cite{Bush2006}. The MSIT provided a basis for directly examining task-induced deactivation of the DMN.
+
+\begin{figure}[h!]
+   \centering
+   \includegraphics[]{msit_stim.png}
+   \caption{Examples of MSIT task stimuli. For congruent trials, the paired digits are zero and the position of the target digit corresponds to its location. For incongruent trials, the distractor digits are non-zero and the target digits location is not the same as its value.}
+   \label{fig:msit}
+\end{figure}
+
+During the task, participants were presented with a series of stimuli consisting of three digits, two of which were identical and one that differed from the other two (see Fig.~\ref{fig:msit} for examples). Participants were instructed to indicate the value and not the position of the digit that differed from the other two (e.g., 1 in 100, 1 in 221). During control trials, distractor digits were 0s and the targets were presented in the same location as they appear on the response box (e.g., 1 in 100 was the first button on the button box and the first number in the sequence). During interference trials, distractors were other digits and target digits were incongruent with the corresponding location on the button box (e.g., 221 – 1 was the first button on the button box but was the third number in the sequence).
+
+The task was presented as a block design with eight 42-second blocks that alternated between conditions, starting with a control block. Each block contained 24 randomly generated stimuli with an inter-stimulus interval of 1.75 seconds. The task began and ended with a 30 second fixation period during which they passively viewed a white plus (+) sign centered on a black background. The MSIT was implemented in PsychoPy (Peirce, 2008) and can be downloaded from the OpenCogLab Repository (\url{http://opencoglabrepository.github.io/experiment\_msit.html}).
+
+\subsubsection{Neurofeedback Task}
+
+In the real-time Neurofeedback (rt-NFB) task, fMRI data were processed during collection, allowing the experimenter to provide visual feedback of brain activity over the course of the experiment \cite{Cox1995,LaConte2011}. The rt-NFB task was developed to examine each individual participant’s ability to either increase or decrease DMN activity in response to instructions, accompanied by real-time feedback of activity from their own DMN \cite{Craddock2012}.
+
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=.9\textwidth]{nfb_stim.png}
+   \caption{Stimuli for “Focus” and “Wander” conditions of the neurofeedback task. The needle moves to the left or the right based on DMN activity.}
+   \label{fig:nfb}
+\end{figure}
+
+During the rt-NFB task, participants were shown an analog meter with ‘Wander’ at one end and ‘Focus’ at the other, along with an indicator of their current performance (see Fig. 3). The fixation point was a white square positioned equally between the two poles. Participants were instructed at the beginning of each block to attempt to either focus their attention (Focus) or to let their mind wander (Wander). The task began with a 30 second control condition and then proceeded with alternating blocks with a specific sequence of durations -- 30, 90, 60, 30, 90, 60, 60, 90, 30, 60, 90, and 30 seconds. At the end of each block, the participant was asked to press a button within a two second window. Starting condition (‘Focus’ vs. ‘Wander’) was counterbalanced, as was the location of each descriptor (‘Focus’, ‘Wander’; Right vs. Left) on the analog meter was counterbalanced across participants.
+
+Each fMRI volume acquired during the task was transmitted from the scanner to the RTAC shortly after it was reconstructed and passed to AFNI’s real-time plugin \cite{Cox1995} for online processing. The volume was realigned to the previously collected mean volume to correct for motion and to bring it into alignment with the tissue masks and DMN SVR model. Mean WM intensity, mean CSF intensity, and global mean intensity were extracted from the volume using masks calculated from the earlier online segmentation of the anatomical image. A general linear model was calculated at each voxel, using all of the data that were acquired up to the current time point, with WM, CSF, global, and motion parameters included as regressors of no interest. The recently acquired volume was extracted from the residuals of the nuisance variance regression, spatially smoothed (6-mm FWHM), and then a measure of DMN activity was decoded from the volume using the SVR model trained from the resting state data. The resulting measure of DMN activity was translated to an angle, which was added to the current position of the needle on the analog meter, moving it in the direction of focus or wander based on DMN activation or deactivation, respectively. This moving average procedure was used to smooth the motion of the needle. The position of the needle was reset to the center at each change between conditions. The neurofeedback stimulus was implemented in Vision Egg \cite{Straw2008} and can be downloaded from the OpenCogLab Repository (\url{http://opencoglabrepository.github.io/experiment\_RTfMRIneurofeedback.html}).
+
+\subsection{Quality Measures.}
+Metrics of the spatial quality of the structural and functional MRI data and temporal quality of the fMRI data were calculated using the Preprocessed Connectomes Project Quality Assessment Protocol (QAP; \url{http://preprocessed-connectomes-project.org/quality-assessment-protocol}, \cite{Shehzad2015}).
+For the structural data, spatial measures include:
+\begin{itemize}
+    \item Signal-to-Noise Ratio (SNR): mean grey matter intensity divided by standard deviation of out-of-brain (OOB) voxels, larger values are better \cite{Magnotta2006}.
+    \item Contrast-to-Noise Ratio (CNR): the difference between mean gray matter intensity and mean white matter intensity divided by standard deviation of OOB voxels, larger values are better \cite{Magnotta2006}.
+    \item Foreground-to-Background Energy Ratio (FBER): variance of in-brain (IB) voxels divided by variance of OOB voxels, larger values are better.
+    \item Percent artifact voxels (QI1): number of OOB voxels that are in structured noise (i.e. artifacts) divided by the total number of OOB voxels, smaller values are better \cite{Mortamet2009}.
+    \item Spatial smoothness (FWHM): smoothness of voxels expressed as full-width half maximum of the spatial distribution of voxel intensities in units of voxels, smaller values are better \cite{Friedman2006}.
+    \item Entropy focus criterion (EFC): the Shannon entropy of voxel intensities normed by the maximum possible entropy for an image of the same size, is a measure of ghosting and blurring induced by head motion, lower values are better \cite{Atkinson1997}
+    \item Summary measures: mean, standard deviation, and size of different image compartments, including, foreground, background, WM, GM, and CSF.
+\end{itemize}
+
+\vskip1em
+
+Spatial measures of fMRI data include EFC, FBER, FWHM, and well as:
+
+\begin{itemize}
+    \item Ghost-to-signal Ratio (GSR): mean of the voxel intensities in parts of the fMRI image (determined by the phase encoding direction) that are susceptible to ghosting, smaller values are better \cite{Giannelli2010}.
+    \item Summary measures: mean, standard deviation, and size of foreground and background.
+\end{itemize}
+\vskip1em
+
+Temporal measures of fMRI data include:
+
+\begin{itemize}
+    \item Standardized DVARS (DVARS): the mean intensity change between every pair of consecutive fMRI volumes, standardized to make it comparable between scanning protocols, smaller values are better \cite{Nichols2012}.
+    \item Outliers: the mean number of outlier voxels found in each volume using AFNI’s 3dToutcount command, smaller values are better \cite{Cox1996}.
+    \item Global correlation (gcorr): the average correlation between every pair of voxel time series in the brain, sensitive to physiological noise, head motion, as well as imaging technical artifacts, such as, signal bleeding in multi-band acquisitions, values that are closer to zero are better \cite{Saad2013}.
+\end{itemize}
+
+\section{Technical Validation}
+A variety of initial analyses have been performed on the first 125 participants to be released in the NFB repository to establish the quality of these data and the successful implementation of the tasks. A series of quality assessment measures were calculated from the raw imaging data and compared with data available through other data sharing repositories. Results of the behavioral tasks were evaluated to ensure consistency with the existing literature. Preliminary analyses of the various fMRI tasks were performed to verify activation and deactivation of the DMN as predicted.
+
+\subsection{Behavioral Assessment}
+Participant responses for the RVIP, MSIT, moral dilemma task and neurofeedback task were analyzed to evaluate whether the participants complied with task instructions, and whether their responses are consistent with previous literature.
+
+\emph{RVIP.} The RVIP python script calculated hit rate, false alarm rate, $A'$, and mean reaction time during task performance. Responses that occur within 1.5 seconds of the last digit of a target sequence being displayed were considered hits, multiple responses within 1.5 seconds are considered a hit followed by multiple false alarms, and responses that occur outside of the 1.5-second window are considered false alarms. The number of hits and false alarms are converted to rates by dividing by the total number of targets. Since the number of false alarms are not bounded, the false alarm rate can be higher than 100\%, resulting in $A'$ values greater than 1 (see Eqn. \ref{aprime}). In post-hoc analysis, false alarm raters greater than 1 were replaced with 1 and $A'$ values greater than 1 were replaced with 0.
+
+\emph{MSIT.} Reaction times and correctness of response were calculated for each trial by the MSIT python script. The response window begins at stimulus presentation and ends just prior to the presentation of the next stimulus. The last key pressed after stimulus presentation is considered in these calculations. A summary script distributed with the task was used to summarize response times and accuracy rates for congruent and incongruent trials. This script assumes that the task begins with a block of congruent stimuli.
+
+\emph{Moral Dilemma.} Reaction times and correctness of responses for control trials were calculated for each trial from the task log files using a script distributed with the task. The response window starts at the beginning of the auditory question prompt and the last key received in this window is used to calculate response times. The length of the auditory question was subtracted from reaction times to control for question length across stimuli. This may result in negative reaction times. These values were then summarized into average reaction time for control and dilemma stimuli. Response accuracy was calculated for the control trials, there is no definitively correct response to the dilemmas.
+
+\emph{Self-report sleep.} After completing the scans, participants were asked to list the scans that they fell asleep during, if any. The results are coded in the COINS database and were analyzed to determine which of the participants fell asleep during the training or testing scans.
+
+\emph{Neurofeedback.} Participants are asked to press a button at transitions between “focus” and “wander” blocks. The hit rate for these catch trials were calculated from the task log files using a script distributed with the task.
+
+\subsection{FMRI Analysis}
+
+All data were preprocessed using a development version of the Configurable Pipeline for the Analysis of Connectomes (C-PAC version 0.4.0, \url{http://fcp-indi.github.io}). C-PAC is an open-source, configurable pipeline for the automated preprocessing and analysis of fMRI data \cite{Craddock2013}. C-PAC is a software implemented in Python that integrates tools from AFNI \cite{Cox1996}, FSL \cite{Smith2004}, and ANTS \cite{Avants2008} with custom tools, using the Nipype \cite{Gorgolewski2011} pipelining library, to achieve high-throughput processing on high performance computing systems.
+
+Anatomical processing began with skull stripping using the BEaST toolset \cite{Eskildsen2012} with a study-specific library and careful manual correction of the results. The masks and BEaST library generated through this effort are shared through the Preprocessed Connectomes Project NFB Skullstripped repository (\url{http://preprocessed-connectomes-project.org/NFB_skullstripped/}) \cite{Puccio2016}. Skullstripped images were resampled to RPI orientation and then a non-linear transform between images and a 2mm MNI brain-only template (FSL, \cite{Smith2004}) was calculated using ANTs \cite{Avants2008}. The skullstripped images were additionally segmented into WM, GM, and CSF using FSL’s FAST tool \cite{Zhang2001}. A WM mask was calculated by applying a 0.96 threshold to the resulting WM probability map and multiplying the result by a WM prior map that was transformed into individual space using the inverse of the linear transforms previously calculated during the ANTs procedure. A CSF mask was calculated by applying a 0.96 threshold to the resulting CSF probability map and multiplying the result by a ventricle map derived from the Harvard-Oxford atlas distributed with FSL \cite{Makris2006}. The thresholds were chosen and the priors were used to avoid overlap with grey matter.
+
+Functional preprocessing began with resampling the data to RPI orientation, and slice timing correction. Next, motion correction was performed using a two-stage approach in which the images were first coregistered to the mean fMRI and then a new mean was calculated and used as the target for a second coregistration (AFNI 3dvolreg \cite{Cox1999}). A 7 degree of freedom linear transform between the mean fMRI and the structural image using FSL’s implementation of boundary-based registration \cite{Greve2009}. Nuisance variable regression (NVR) was performed on motion corrected data using a 2nd order polynomial, a 24-regressor model of motion \cite{Friston1996}, 5 nuisance signals, identified via principal components analysis of signals obtained from white matter (CompCor, \cite{Behzadi2007}), and mean CSF signal. WM and CSF signals were extracted using the previously described masks after transforming the fMRI data to match them in 2mm space using the inverse of the linear fMRI-sMRI transform. NVR residuals were written into MNI space at 3mm resolution and subsequently smoothed using a 6mm FWHM kernel.
+
+Individual level analyses of the MSIT and MD tasks were performed in FSL using a general linear model. The expected hemodynamic response of each task condition was derived from a boxcar model, specified from stimulus onset and duration times, convolved with a canonical hemodynamic response function. Multiple regressions were performed at each voxel with fMRI activity as the independent variable and task regressors as the dependent variables. Regression coefficients at each voxel were contrasted to derive a statistic for the difference in activation between task conditions (incongruent $>$ congruent for MSIT, dilemma $>$ control for MD). The resulting individual level task maps were entered into group-level one-sample t-tests, whose significance were assessed using multiple comparison correction via a permutation test (10,000 permutations) implemented by FSL’s randomise ($p<0.001$ FWE - Threshold Free Cluster Enhancement (TFCE) \cite{Salimi-Khorshidi2011}). Participants with missing behavioral data, or whose behavioral responses were outliers ($>1.5$ interquartile range), were excluded from group level analysis.
+
+Maps of DMN functional connectivity were extracted from the resting state and neurofeedback scans using a dual regression procedure \cite{Filippini2009}. Time courses from 10 commonly occurring intrinsic connectivity networks (ICNs) were extracted by spatially regressing each dataset onto templates derived from a meta-analysis of task and resting state datasets \cite{Smith2009}. The resulting time courses were entered into voxel-wise multiple regressions to derive connectivity map for each of the 10 ICNs. The ICN corresponding to the DMN was subsequently subtracted and entered into group-level one-sample t-tests, whose significance were assessed using multiple comparison correction via a permutation test (10,000 permutations) implemented by FSL’s randomise ($p<0.001$ FWE - Threshold Free Cluster Enhancement (TFCE) \cite{Salimi-Khorshidi2011}). To evaluate performance on the neurofeedback task, DMN time course for each participant were correlated with an ideal time course (obtained by using instruction onset and duration information – i.e., focus or wander). Participants who reported sleeping during the resting-state scan were excluded from its analysis and analysis of the feedback scan was performed with and without participants who reported sleep.
+
+\subsection{Validation Results}
+
+\subsubsection{Behavioral Assessment.}
+
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=.9\textwidth]{bxplots.pdf}
+   \caption{Visualizations of behavioral results for all tasks. Panels A-C show data as violin plots (filled circle represents the mean, line range represents the confidence interval, ‘X’ data points indicate outliers (1.5x Interquartile range)). Panel A shows, A’, False Alarm Rate, Hit Rate, and mean reaction time for the RVIP. Panel B shows accuracy (left) and reaction time (right) for congruent relative to incongruent trials of the MSIT task. Panel C shows accuracy for the control trials, as well as reaction time for both the dilemma and control trials of the Moral Dilemma Task. Panel D shows self-reported sleep (none, sleep during train only, sleep during test only, and sleep during train and test sessions) as a percentage of the total sample on the left and correct response (i.e., pressed any button) during catch trials as a histogram.}
+   \label{fig:bx_plots}
+\end{figure}
+
+The behavioral results for the Rapid Visual Information Processing (RVIP), Multi-Source Interference Task (MSIT), Moral Dilemma Task (MD), and Neurofeedback Task (NFB) are illustrated in Fig.~\ref{fig:bx_plots}. Reaction times, hit rates, and A’ calculated from the RVIP task were consistent with, although slightly worse than, those previously published in young adults (n=20, age 25.30 +/- 5.09 years, RVIP reaction time 425.6 +/- 43.0 ms, A’ = 0.936 +/- 0.05, \cite{Turner2003}). The differences in performance may have been due to the inclusion of participants with psychiatric diagnoses in the NFB population. The RVIP had the highest number of outliers of the tasks with 16 participants having false alarm rates greater than 1.5 times the inter-quartile range, 11 of which also had outlier A’ values (see Fig.~\ref{fig:outliers}). Similarly, Figure~\ref{fig:bx_plots}B illustrates that the performance on the MSIT was consistent with, although a little worse than, values published in a previous validation study (n = 8, 4 females, age = 30.4 +/- 5.6 years, congruent trial reaction time = 479 +/- 92 ms, incongruent trial reaction time = 787 +/- 129 ms \cite{Bush2003}). MSIT data was only available in 107 of the participants due to a faulty button box, of which a total of 13 had responses that were outliers on at least one of the statistics derived from the task (see Fig.~\ref{fig:outliers}). For MD, the difference in reaction times distributions between control and dilemma trials support the hypothesis that the dilemma trials require more processing, as is expected \cite{Harrison2008} (see Fig.~\ref{fig:bx_plots}C). MD results are available for 121 participants due to button box problems and 12 of the remaining have accuracy on the control trials that are outliers (see Fig. 5). Only 58.5\% of the participants reported remaining awake during both the resting state and neurofeedback scans, these subjective measures were validated by catch trial performance (see Fig.~\ref{fig:bx_plots}D).
+
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=.75\textwidth]{outliers.pdf}
+   \caption{The intersection of behavioral assessment outliers and missing data.  Participants are ordered by their number of outliers or missing measurements.}
+   \label{fig:outliers}
+\end{figure}
+
+When using the data it might be desirable to exclude participants who had poor task performance, slept during the parts of the experiment, or experienced technical issues that resulted in missing data. Figure~\ref{fig:outliers} illustrates the intersection of these various problems across participants to get a better understanding of their total impact on sample size. Data is missing for twenty-three participants due to technical errors such as button box malfunction, scanner problems, and power outages. Two participants asked to be removed from the scanner before the task was completed. A total of 50 participants have some unusable data due to poor task performance or falling asleep during the resting state or feedback scans.
+
+\subsubsection{Quality Assessment Protocol}
+To evaluate the spatial and temporal quality of the NFB fMRI data, QAP measures calculated on the data were compared to those calculated from resting state fMRI scans from the Consortium on Reproducibility and Reliability (CoRR) \cite{Zuo2014}. The CoRR dataset contains scans on 1,499 participants using a variety of test-retest experiment designs. To avoid biasing the comparison with multiple scans from the same subjects, the first resting state scan acquired on the first scanning session was used for each participant. Signal-to-noise ratio, ghost-to-signal ratio, voxel smoothness, global correlation, standardized DVARS and mean RMSD of the NFB fMRI data are all comparable to CoRR (Fig.~\ref{fig:qaplots}). Head motion, as indexed by mean RMSD, is higher for the resting state (train) and neurofeedback scans than the other two tasks (Fig.~\ref{fig:qaplots}F).
+
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=.9\textwidth]{qaplots.pdf}
+   \caption{Illustrations of the overall quality of the functional neuroimaging data. Distributions of the measures for fMRI data from the MSIT, Moral Dilemma, Resting Scan (NFB Train), and Neurofeedback (NFB Test) are shown in comparison to resting state fMRI data from the CoRR dataset. Quality measures are represented as violin plots overlaid with boxplots (center line represents the median, box range represents the confidence interval, ‘X’ data points indicate outliers (1.5x Interquartile range)). Lines representing the 5$^{th}$, 10$^{th}$, 25$^{th}$, 50$^{th}$, 75$^{th}$, 90$^{th}$, and 95$^{th}$ percentiles for the CoRR data are shown to simplify visual comparisons. Standardized DVARS is mean root-mean-square variance of the temporal derivative of voxels time courses that has been standardized to make the values comparable across different acquisition protocols. Mean RMSD is the mean root mean squared deviation (RMSD) of motion between consecutive volumes.}
+   \label{fig:qaplots}
+\end{figure}
+
+\subsubsection{fMRI Assessment}
+The group level analysis of the MSIT task included 87 participants after 18 were excluded for missing data and 20 were excluded for being outliers on either accuracy of response or mean reaction times (see Fig.~\ref{fig:outliers}). 110 participants data were included in the group level analysis of the MD task after 5 participants were excluded due to technical problems, and another 10 were excluded due to outlier task performance. As expected from the literature, the MD task robustly activated the DMN (Fig.~\ref{fig:tfmri_plots}A, red) and deactivated attentional networks (Fig.~\ref{fig:tfmri_plots}A, blue) that are typically active during task performance \cite{Harrison2008}. Consistent with previous literature \cite{Bush2003} group level analysis of the MSIT showed robust activation of the dorsal and ventral attention networks (Fig~\ref{fig:tfmri_plots}B, red) and deactivation of the DMN (Fig~\ref{fig:tfmri_plots}B, blue). 21 participants reported falling asleep during the resting state scan and were excluded from group-level analysis. Figure~\ref{fig:tfmri_plots}C illustrates the expected pattern of anti-correlation between DMN and task networks \cite{Fox2005} for the remaining 104 participants. These results confirm that these three tasks are working as expected for deactivating, activating, and localizing the DMN.
+
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=.9\textwidth]{tfmri_plots.png}
+   \caption{Illustrations of the overall quality of the functional neuroimagDefault network patterns extracted from the Moral Dilemma, MSIT, and Resting State fMRI Tasks. A) The dillemma $>$ control contrast from group-level analysis of the Moral Dilemma task results in DN activation. B) The incongruent $>$ congruent contrast of the MSIT shows DN deactivation. C) Functional connectivity of the DN extracted from the resting state task using dual regression. Statistical maps were generated by a permutation group analysis, thresholded at $p < 0.001$ TFCE FWE-corrected; overlay colors represent t statistics.}
+   \label{fig:tfmri_plots}
+\end{figure}
+
+The neurofeedback task was analyzed with all of the participants that completed the scan (n=121) (Fig.~\ref{fig:nfb_plots}A and B) and again with only the participants who did not fall asleep during the resting state or neurofeedback tasks (Fig.~\ref{fig:nfb_plots}C). The group averaged DMN map extracted from this data is consistent with what we expect, with the exception of the prominent negative correlations (Fig.~\ref{fig:nfb_plots}A). Comparing the group mean DMN time course for all participants to the task ideal time course shows that overall the task trend is followed, with a good deal of high frequency noise (Fig 8B). When the participants that fell asleep are removed, the high frequency noise remains, but the amplitude difference between wander and focus trials becomes greater, driving a higher correlation with the task waveform (Fig.~\ref{fig:nfb_plots}C). This is further seen in the distribution of individual-level correlations between DMN activity and the task, where those who do not sleep perform marginally better for both conditions (Fig.~\ref{fig:nfb_perf}).
+
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=.9\textwidth]{nfb_plots.png}
+   \caption{Technical validation for the neurofeedback paradigm. Panel A shows the functional connectivity map for the default mode network across all participants (p < 10-30 uncorrected, n=121) derived through dual regression. Panel B shows average overall time-series (in dark blue with shading indicating standard error) of the default mode network, across all participants (n=121), in relation to ideal time-series (in black). The coefficient of determination of the averaged time series is $R^2$ = 0.36. Panel C shows average overall time-series (in dark blue with shading indicating standard error) of the default mode network across participants who reported no sleep during both training and feedback trials (n=76), in relation to ideal time-series (in black). The coefficient of determination of the averaged time series is $R^2$ = 0.68.}
+   \label{fig:nfb_plots}
+\end{figure}
+
+\begin{figure}[h!]
+   \centering
+   \includegraphics[]{nfb_perf.png}
+   \caption{Distribution of individual correlations for participant default mode network time-series with ideal-times series as a function of sleep status. Each sleep status group is then sub-divided into the two task conditions -- Focus/Wander. Subjects with reported sleep during both trials show lower correlations with the model compared to subjects with no reported sleep. The dots indicate the mean within each group and the distributions of the correlations are plotted around the mean.}
+   \label{fig:nfb_perf}
+\end{figure}
+
+\section{Usage Notes}
+The PSWQ and PTQ were added to the assessment battery in July 2014, approximately nine months after data collection began. As a result, scores for these measures are missing from the first 26 and 27 participants, respectively. Additionally, in July of 2014, the full scale Response Styles Questionnaire (RSQ) was replaced with the newer subscale RRS, which has better psychometric properties and fewer questions. The only difference between the RRS subscale of the RSQ and the newer RRS is that one item from the Depression-Related subscale in the RRS is absent from the RSQ. To correct for this missing item in those who received the RSQ, we suggest the following: (1) Divide the RSQ derived Depression Related subscale score by 11; (2) round down to the nearest whole number (3) add this number to the RSQ derived Depression Related subscale and RSQ derived RRS-subscale total score. This procedure was validated using responses from 13 participants who received the RRS and RSQ. Correlations between scores calculated using all of the questions and those calculated using the above procedure were r = 0.9994 for the Depression-Related subscale and r = 0.9997 for the RRS total score.
+
+For the MSIT, fMRI data should be analyzed as 42s blocks with the following onset times after dropping the first four TRs: congruent blocks - 22, 106, 190, 274; incongruent blocks –64,148, 232, 316. The Moral Dilemma fMRI data should be analyzed as 30s blocks with the following onset times after dropping the first four TRs: control blocks – 12, 72, 132, 192; dilemma blocks – 42, 102, 162, 222. Note that up until April 2014 (first 11 participants), no pre-experiment fixation period was implemented for the moral dilemma task. For those participants, all of the aforementioned stimulus onset times should be altered by subtracting 20s. For analysis of the NFB fMRI data, the first stimulus onset (and duration) times, in seconds, are as follows: 34(30), 162(60), 260(90), 418(60), 576(30), 674(90). The second stimulus onset (and duration) times, in seconds, are as follows: 68(90), 226(30), 354(60), 482(90), 610(60), 768(30).
+
+For some participants, the button box used to record participant responses in the scanner was defective, resulting in unusable data for the MSIT task (18 participants) and Moral Dilemma task (5 participants).
+
+As previously discussed scripts are provided with each of the tasks for calculating response accuracies and reaction times. The assumptions made in calculating these scores may not be appropriate to all researchers, or in all applications. For this reason we have released the trial-by-trail response information in log files that accompany the fMRI data.
+
+See information in Data Privacy section of Data Records for restrictions and limitations on data use.
+
+\section{Discussion/Conclusions}
+
+This manuscript describes a repository of data from an experiment designed to evaluate DMN function across a variety of clinical and subclinical symptoms in a community-ascertained sample of 180 adults (50\% females, aged 21-45). The data includes assessments that cover a variety of domains that have been associated with or affected by DMN activity, including emotion regulation, mind wandering, rumination, and sustained attention. Functional MRI task data is included for tasks shown to activate, deactivate, and localize the DMN, along with a novel real-time fMRI neurofeedback paradigm for evaluating DMN regulation. Preliminary analysis of the first 125 participants released for sharing confirms that each of the tasks is operating as expected.
+
+One unexpected result of our technical validation is a high amount of data loss due to poor participant performance and compliance. Excluding all of the participants who are considered outliers on at least one of the tasks or who fell asleep during the resting state or neurofeedback scans, would remove 73 of the 125 participants (see Fig.~\ref{fig:outliers}). Forty-six individuals could be excluded for sleep, which is not surprising given recent reports of the high incidence of sleep during resting state scans \cite{Tagliazucchi2014}. Interestingly, 26 of these participants were also outliers in at least one other task. This indicates that either they had trouble staying awake during the other tasks as well, or were non-compliant overall. Due to a paucity of information on participant compliance during fMRI experiments, it is hard to tell whether what we are seeing is common for our population, or whether there is a specific problem with our experiment protocol. We do believe that compliance would be higher if we were to utilize a younger healthy population, or participants who have been scanned multiple times, as is commonly done in cognitive neuroscience. These problems with sleep and poor performance illustrate the need to debrief participants or otherwise monitor their wakefulness during the scan. Additionally, it is important to check the data as it is acquired so that a study protocol can be adapted to reduce data loss.
+
+Although much of the interest in real-time fMRI based neurofeedback is focused on clinical interventions \cite{Stoeckel2014}, it is also a valuable paradigm for probing typical and atypical brain function. We believe that the data in this repository will have a substantial impact for understanding the nuances of DMN function and how variation in its regulation leads to variation in phenotype. This resource will be particularly useful to students and junior researchers for testing their hypothesis of DMN function, learning new techniques, developing analytical methods, and as pilot data for obtaining grants. We encourage users to provide us with feedback for improving the resource and are very interested to learn about the research performed with the data.

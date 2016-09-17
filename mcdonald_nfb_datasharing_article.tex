@@ -1,0 +1,89 @@
+\documentclass[3p]{elsarticle}
+\usepackage{amsthm,amsmath}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+\usepackage{lineno}
+\modulolinenumbers[5]
+
+\journal{Neuroimage}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Elsevier bibliography styles
+%%%%%%%%%%%%%%%%%%%%%%%
+%% To change the style, put a % in front of the second line of the current style and
+%% remove the % from the second line of the style you would like to use.
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Numbered
+%\bibliographystyle{model1-num-names}
+
+%% Numbered without titles
+%\bibliographystyle{model1a-num-names}
+
+%% Harvard
+%\bibliographystyle{model2-names.bst}\biboptions{authoryear}
+
+%% Vancouver numbered
+%\usepackage{numcompress}\bibliographystyle{model3-num-names}
+
+%% Vancouver name/year
+%\usepackage{numcompress}\bibliographystyle{model4-names}\biboptions{authoryear}
+
+%% APA style
+%\bibliographystyle{model5-names}\biboptions{authoryear}
+
+%% AMA style
+%\usepackage{numcompress}\bibliographystyle{model6-num-names}
+
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frontmatter}
+
+\input{mcdonald_nfb_datasharing_frontmatter_submit}
+
+
+% \title{Elsevier \LaTeX\ template\tnoteref{mytitlenote}}
+% \tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
+
+% %% Group authors per affiliation:
+% \author{Elsevier\fnref{myfootnote}}
+% \address{Radarweg 29, Amsterdam}
+% \fntext[myfootnote]{Since 1880.}
+
+% %% or include affiliations in footnotes:
+% \author[mymainaddress,mysecondaryaddress]{Elsevier Inc}
+% \ead[url]{www.elsevier.com}
+
+% \author[mysecondaryaddress]{Global Customer Service\corref{mycorrespondingauthor}}
+% \cortext[mycorrespondingauthor]{Corresponding author}
+% \ead{support@elsevier.com}
+
+% \address[mymainaddress]{1600 John F Kennedy Boulevard, Philadelphia}
+% \address[mysecondaryaddress]{360 Park Avenue South, New York}
+
+\begin{abstract}
+\input{mcdonald_nfb_datasharing_abstract}
+\end{abstract}
+
+\begin{keyword}
+
+Functional MRI \sep real-time fMRI \sep neurofeedback \sep default mode network \sep data sharing
+
+\end{keyword}
+
+\end{frontmatter}
+
+\linenumbers
+
+\input{mcdonald_nfb_datasharing_body}
+
+\input{mcdonald_nfb_datasharing_endmatter}
+
+\section*{References}
+
+\bibliography{mcdonald_nfb_datasharing_bib}
+
+\end{document}
