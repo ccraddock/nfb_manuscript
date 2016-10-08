@@ -1,0 +1,138 @@
+\documentclass{article}
+
+\usepackage{lipsum}
+% \usepackage{layout}
+
+\usepackage{xcolor}
+\usepackage[normalem]{ulem}
+\newcommand{\RESPONSE}[1]{\textcolor{blue}{#1}}
+
+\newcommand{\ts}{\textsuperscript}
+%\usepackage{fontspec}
+%\setmainfont{Calibri}
+\providecommand\CMItoname{}
+\providecommand\CMItoaddress{}
+\providecommand\CMItoopeningname{Editor}
+\providecommand\CMIreline{Response to reviews for Ms. No.: NIMG-16-2197}
+\input{NKIletterdefs}
+
+\begin{document}
+\sffamily
+
+We would like to thank the reviewers for their indepth and thoughtful critique of our manuscript titled ``Real-time fMRI Neurofeedback Based Stratification of Default Network Regulation Neuroimaging Data Repository''. We have updated the manuscript to address the criticisms and present a point by point response in blue text below.
+
+\section*{Reviewers' comments:}
+
+\subsection*{Reviewer \#1} 
+
+The manuscript by McDonald et al. describes the technical validation of a neuroimaging data repository that contains cross-sectional fMRI, behavioral and questionnaire data from, to date, 125 participants and aims to have a final sample of 180 subjects. The study was designed to evaluate default mode network (DMN) function. The MRI data consists of an anatomical scan (MPRAGE) as well as functional data from a moral dilemma task, a multi-source interference task, a resting state scan and a neurofeedback paradigm.
+
+As a firm supporter of open science initiatives, I think this manuscript/repository will make an excellent contribution to the neuroimaging field and will encourage other researchers to study DMN function across a heterogeneous sample. The novelty of the repository clearly lies in the availability of the neurofeedback paradigm in which participants were asked to up- or down-regulate their DMN activity in a block-wise fashion.
+
+\RESPONSE{We thank the reviewer for their supportive comments. We share your enthusiasm for data sharing and likewise hope that it will be a valuable resource to neuroimaging researchers at all levels of their career.}
+
+However, before I can recommend publication I have a few points that need to be addressed.
+
+\subsubsection*{Major:}
+
+1. As mentioned before, I think the novelty and attractiveness of this repository lies in the availability of the neurofeedback paradigm. While the authors focus on the opportunity to study the subjects' capability to modulate DMN activity and link it with behavioral and questionnaire data, it could also potentially be very useful for real-time fMRI method development. However, in its current format this would not be possible as it is heavily preprocessed using "offline" (i.e., not applicable in real-time) pipelines. This will hinder users of the repository a) to replicate the classifier training and testing of the data (as presented in the manuscript) as the real-time preprocessing differed from the offline preprocessing of the dataset and b) to use the dataset to benchmark different real-time preprocessing pipelines or classifiers. The fact that neuroimaging repositories in general only provide preprocessed data makes it difficult to engage research groups in real-time method development that do not have the financial resources or the equipment to acquire their own data. In turn, if the data would be provided in raw format, than research groups could treat the data as it would arrive in real-time (simulated real-time processing) and hence, contribute to methodological advances in the field. While I understand the enhanced convenience for user of the repository to provide preprocessed data, I think with regard to the neurofeedback paradigm, the authors should definitely consider also uploading the raw data.
+
+\RESPONSE{We apologize for the confusion, beyond minimal preprocessing to anonymize the data (conversion to NIFTI and defacing anatomical images) we shared the data in unprocessed form. We have added the following text to section 2.1 of the manuscript to clarify this point: ``The imaging data is released in unprocessed form except that image headers have been wiped of protected health information and faces have been removed from the structural images.''}
+
+2. In the abstract, I am missing information on the technical validation of the data. In particular with regard to the fact that more than half of the participants may need to be removed for potential analyses should be mentioned there.
+
+\RESPONSE{Thank you for pointing out this omission, we have updated the abstract to include a short paragraph describing the results of technical validation: ``Technical validation of the data confirms that the tasks deactivate and activate the DMN as expected. Group level analysis of the neurofeedback data indicates that the participants are able to modulate their DMN with considerable inter-subject variability. Preliminary analysis of behavioral responses and specifically self-reported sleep indicate that as many as 73 participants may need to be excluded from an analysis depending on the hypothesis being tested.''}
+
+3. P.8-9 and P.16: For all three tasks, the authors include the precise onsets of the task blocks, which seems unnecessarily detailed for the manuscript. I could not infer if the authors also released text files that contained block onset and duration for the experiment (they report only that they released the trial-by-trail response information in log files). I think it would be advantageous for users to have separate text files for the different conditions that directly could be uploaded as regressor files into the common analyses packages.
+
+\RESPONSE{We apologize that this isn't more clear. The data includes task files which includes the task onsets and durations as specified in the BIDS format. While these are not available in exactly the format required by FSL or AFNI, they can be used to generate those files very easily. The BIDS format was chosen to maximally work across different software, and to minimally be effected by processing choices such as the number of images that are discarded form the beginning of the acquisition. We have clarified the text to indicate that the stimulus onsets and durations are available in the task traces.}
+
+\subsubsection*{Minor:}
+4. P.1: In the abstract, I would advise to explicitly list the fMRI tasks that were used (moral dilemma task, a multi-source interference task) in order to allow readers to quickly spot the appropriateness of the repository for their research question.
+\RESPONSE{This has been added, along with text briefly explaining why each task was chosen.}
+
+5. P.3, line 75: The authors mention that data of the Neurofeedback (NFB) repository was collected after the participants completed the Enhanced Nathan Kline Institute-Rockland Sample (NKI-RS) protocol. Were the two protocols on separate days or on the same day? Please also provide information on how many hours on average the NBS protocol took.
+\RESPONSE{The protocols were on separate days, we have updated the \emph{Contents of the repository} section to better reflect this:``The data is collected in a separate 2.5-hour visit that occurred within \textbf{**six**} months of completing the Enhanced Nathan Kline Institute-Rockland Sample (NKI-RS) protocol.''}
+
+6. P.7, line 172: Are the white matter and CSF masks employed in the real-time study also provided in the repository?
+\RESPONSE{None of the data calculated during the real-time experiment are currently being shared. We believe that the greatest value for the dataset lies in the unprocessed data, and have prioritized its organization and sharing above all else. We hope to follow-up with processed data and online variants in the future, but that is beyond the scope of the current initiative.}
+
+7. P.7, line 188: Was the DMN canonical map of the DMN employed in the real-time study somehow thresholded and/or binarized?
+\RESPONSE{The DMN map was not thresholded prior to spatial regression, this point has been clarified in the manuscript: ``A SVR model of the DMN was trained using a modified dual regression procedure in which a spatial regression to the unthresholded DMN template was performed to extract a time course of DMN activity.''}
+
+8. P.7, line 190: How long did training of the classifier take?
+\RESPONSE{Classifier training is generally very fast, completing within 2 minutes. We have added this information to the methods section: `` After SVR training was completed (generally took less than 2 minutes)''}
+
+9. P.7, line 196: Are the classifier as well as the tailored DMN maps also available in the repository?
+\RESPONSE{As mentioned in the response to minor point 6, we did not release the classifiers. The DMN template are publicly available from the FMRIB web page. This information has been made clear in the methods section: ``The classifier is trained from resting state fMRI data using a time course of DMN activity extracted from the data using spatial regression to a publicly available template derived from a meta-analysis of task and resting state datasets [41, 42].''}
+
+10. P.11, line 299: I only can see that information on DVARS but not of frame-wise displacement (FD) is included in the quality measures for the fMRI data. I would see a clear benefit of adding this information in order to make it comparable to other studies. \RESPONSE{The QAP includes Jenkinsons's mean root mean square displacement measure, which is analogous to meanFD, but more accurate. Although we included plots of this measure in figure 6, we inadvertently left it out of the list of quality measures, it has been added: ``Mean  root  mean  square  displacement  (mean  RMSD): the average distance between consecutive fMRI volumes  [61].   This  has  shown  to  be  a  more  accurate  representation  of  head  motion  than mean frame-wise displacement (meanFD) proposed by Power et.  al.  [62] [63].''}
+
+
+11. P. 12, line 357: Was the white matter prior map also derived from the Harvard Oxford atlas?
+
+\RESPONSE{The white matter prior map used was distributed with FSL (avg152T1\_white\_bin.nii.gz). This information has been clarified in FMRI Analysis section: `` WM mask was calculated by applying a 0.96 threshold to the resulting WM probability map and multiplying the result by a WM prior map (avg152T1\_white\_bin.nii.gz - distributed with FSL) that was transformed into individual space using the inverse of the linear transforms previously calculated during the ANTs procedure.''}
+
+\section*{Reviewer \#2}
+
+In 2012, the Nathan Kline Institute announced the intention to acquire a large-scale (N$>$1000 subjects), "deeply phenotyped" dataset comprising structural and functional MRI in association with detailed physical and behavioral measures, the objective being to discover the physiological correlates of psychiatric disorders. The first paper (Nooner et al., 2012) focused on participant inclusion/exclusion criteria. In the interval, several additional papers detailed various aspects of the NKI-RS dataset, in particular, the processing pipeline (Craddock et al., 2013), quality assurance measures (Shehzad et al., 2015), and test-retest statistics (Zuo et al., 2014). The current submission reports a "technical validation from n=125 participants of the final targeted sample of 180 participants." In describing this paper as a "technical validation," it appears that the authors mean to signal that the reported results should not be judged on the basis of novelty or
+scientific import.
+
+\RESPONSE{We apologize for the confusion, but the study described herein is not the NKI-RS, but a separate experiment, with separate funding and aims. We have clarified this in the introduction: ``The Default Network Regulation Neuroimaging Repository contains data from a suite of fMRI experiments aimed at better understanding individual variation in DMN activity and modulation.  Although it is a separate project, it has been harmonized with, and is distributed alongside, the Enhanced Nathan Kline Institute-Rockland Sample(NKI-RS) [19], which aims to capture deep and broad phenotyping of a large community-ascertained sample.''} 
+
+
+Three block-design fMRI tasks were administered in addition to resting state scans: a Moral Dilemma task (previously shown to "activate" the DMN), an interference task, designed to recruit cognitive control networks, and a neuro-feedback task, in which participants were instructed, by visual cue, to either "focus" their thoughts or let their minds wander. The results are presented in Figs. 7 - 8. Thus, Fig. 7 demonstrates that the Moral Dilemma task activated the DMN while suppressing the anti-DMN; a generally inverse response was generated by the interference task. Regarding the resting state data, the topography of the DMN was extracted using ICA-based dual regression. Fig. 8 shows that the BOLD fMRI signal summed over the DMN was modulated as expected by the alternating mind wandering/focus task. This effect was decidedly more pronounced in data excluding participants who self-reported sleeping during the scan. Fig. 6 reports data quality measures, e.g., standardized
+DVARS compiled over the various task conditions. Results correlating (across subjects) the fMRI data against phenotypic measures, i.e., the originally stated objective of the NKI-RS initiative, are conspicuously absent.
+
+\RESPONSE{This manuscript is a data descriptor that describes a data-sharing repository. In accordance with Neuroimage's advice for publishing such manuscripts, and other journal's formats for similar publications, it includes a technical validation of the data in the repository, and explicitly excludes any new analyses or novel scientific findings.}
+
+Specific critiques of this work might include, for example, that sleep was assessed by self-report rather than fMRI-based measures (Tagliazucchi et al., 2012). That more participants slept than originally anticipated is discussed as an unexpected result. However, this is a predictable feature of studies involving community-based participants (Tagliazucchi \& Laufs, 2014). The principal issue is that, although the necessary data have been acquired, the authors have abrogated their original commitment to studying the functional neuroimaging correlates of psychological measures. Thus, this paper is pitched as announcing the existence of a data repository rather than as presenting scientific results. Whether this type of paper merits publication is uncertain.
+
+\RESPONSE{The reviewer is correct that the paper is a data descriptor and not meant to carry out any in-depth analyses. The appropriateness of data descriptors for publication in NeuroImage is supported by their recent special issues on data sharing as well as communications from the editor-in-chief.}
+
+However, after 4 papers of promise, it would seem, to this reviewer at least, that the time to present some results has arrived. Surely, the grant proposal funding this work mentions potential associations between
+personality traits and measurable fMRI features (resting state or task-based). Why not put some of these hypotheses to the test? 
+
+\RESPONSE{This comment seems to be related to the same lack of clarity about the relationship between the described study and the NKI-RS that we addressed above. When it comes to the impact of the greater NKI-RS effort, we have a much more optimistic view. Data shared through this initiative have been used by 122 publications, many of which report phenotypic correlations (http://fcon 1000.projects.nitrc.org/indi/enhanced/pubs.html). We draw particular attention to our recent publication in Biological Psychiatry (Van Dam et al., in press), which is directly relevant to associations between personality traits and R-fMRI features. Of note, this paper made use of multivariate distance matrix regression - a technique for which the NKI-RS datasets were previously used to carry out the first application in functional connectomics (i.e., detection of brain-behavior relationships for IQ) (Shehzad et al., 2014; Neuroimage).}
+
+\RESPONSE{The reviewer is also correct that the grant funding the DMN neurofeedback experiment does refer to brain-behavior relationships, but importantly, it also requires the data to be shared as it is collected. The goal of this data descriptor is to provide users with an in-depth description of the data, how it was collected, and a technical validation. }
+
+Possibly, the authors have already carried out such analyses without finding statistically significant associations. If so, that does not matter. Negative findings are of interest, provided that they are accompanied by an appropriate power analysis. 
+
+\RESPONSE{We will publish the results of further analyses when they are completed -- negative or otherwise. But the results of these analyses are beyond the scope of a data descriptor.}
+
+Relating functional connectivity measures to cognitive performance measures, e.g., as in (Finn et al., 2015), is fraught with interpretive difficulties (Siegel et al., 2016). Possibly, the authors are aware of these developments and, hence, are understandably cautious. However, these difficulties make it even more imperative that experts (i.e., the authors) rather than amateurs conduct the required analyses, the latter option being what is implied by the notion of a data repository.
+
+\RESPONSE{We disagree wholeheartedly with the notion that only we that collected the data are qualified to analyze them and interpret the findings. Indeed, the open access of the data through repositories such as the one we describe here make it possible for others to re-analyze the data to validate our results and interpretations (for example, Siegel et al., 2016). Additionally, this repository makes it possible for researchers, who have all of the requisite skills, but lack the resources to perform a large scale data collection, to test their hypotheses about DMN function. It also supports the education of new researchers and can be used as pilot data for other researchers to get funding. We believe that all of the benefits of data sharing completely outweigh the concerns raised by the reviewer.}
+
+Finn, E.S., Shen, X., Scheinost, D., Rosenberg, M.D., Huang, J., Chun, M.M., Papademetris, X., Constable, R.T., 2015. Functional connectome fingerprinting: identifying individuals using patterns of brain connectivity. Nature neuroscience 18, 1664-1671.
+
+Siegel, J.S., Mitra, A., Laumann, T.O., Seitzman, B.A., Raichle, M., Corbetta, M., Snyder, A.Z., 2016. Data Quality Influences Observed Links Between Functional Connectivity and Behavior. Cerebral cortex.
+
+Tagliazucchi, E., von Wegner, F., Morzelewski, A., Brodbeck, V., Laufs, H., 2012. Dynamic BOLD functional connectivity in humans and its electrophysiological correlates. Frontiers in human neuroscience 6, 339.
+
+\section*{Reviewer \#3}
+
+The authors describe a dataset comprised of several tasks, resting state fMRI, and behavioral and cognitive measures collected from over 100 subjects. A unique feature of the dataset is the inclusion of information regarding default mode network modulation via real-time fMRI neurofeedback. This is a well-written, concise manuscript describing a valuable dataset. Some minor comments are below.
+
+Can the authors include information regarding handedness of participants?
+
+\RESPONSE{Each participant was classified as Left or Right handed by Edinburgh Handedness Inventory, Revised and this information is provided in the phenotype file in the repository. We have updated the text to make this more clear: ``Basic phenotypic data, which includes age, sex and handedness are available in the participants.tsv file at the root of the repository.''}
+
+Under 3.2 Phenotypic data, it would be helpful if the authors included a one-sentence descriptor of each assessment. For example, "The Penn State Worry Questionnaire, a X item self-report measure indexing symptoms of X".
+
+\RESPONSE{We thank the reviewer for this suggestion and we have added a short description of each assessment.}
+
+Can the authors provide more details regarding DMN identification for the neurofeedback? For example, it is stated that a "canonical map of the DMN" was used. Where was this map derived from? What exactly were the "preexisting expectations about DMN anatomy and function"?
+
+\RESPONSE{We have clarified in the methods section which and how the DMN template was used in the spatial regression: ``The real time fMRI neurofeedback experiment utilizes a classifier based approach for extracting DMN activity levels from fMRI data TR-by-TR, similar to Craddock et al., 2012. The classifier is trained from resting state fMRI data using a time course of DMN activity extracted from the data using spatial regression to a publicly available template derived from a meta-analysis of task and resting state datasets [41,42].'' }
+
+It is revealed that 50 participants had unusable data for various reasons. This information could be incorporated into the abstract so that the reader has a more accurate sense of the size of the dataset.
+
+\RESPONSE{We have incorporated this finding into the abstract: Preliminary analysis of behavioral responses and specifically self-reported sleep indicate that as many as 73 participants may need to be excluded from an analysis depending on the hypothesis being tested.}
+
+In the discussion, can the authors go into more detail regarding how effective the neurofeedback protocol was in modulating the DMN?
+
+\RESPONSE{A paragraph in the discussion section has been added describing the effectiveness of the neurofeedback task: ``Group level analysis of the neurofeedback data indicates that the participants are able to modulate their DMN along with the task instructions. For all participants the group average time-course co-varies significantly with the task model and increases when removing participants who reported sleep. Greater than half of the  participants who reported no sleep had a  significant correlation (p \textless 0.05; r\textgreater 0.15, phase randomization permutation test) with the task model (see Fig. 9). The large portion of participants who were able to significantly modulate their DMN shows the effectiveness of the neurofeedback protocol.''}
+
+\end{document}
